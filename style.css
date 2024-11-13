@@ -12,7 +12,6 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
   margin: 0;
   padding: 0;
 }
@@ -22,10 +21,15 @@ body {
   border-radius: 20px;
   box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
   width: 100%;
-  max-width: 600px;
+  max-width: 600px;  /* Max width for larger screens */
   overflow: hidden;
   padding: 2rem;
-  margin: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .quiz-header {
@@ -35,7 +39,6 @@ body {
 h2 {
   font-size: 1.6rem;
   padding: 1rem;
-  text-align: center;
   margin: 0;
 }
 
@@ -307,58 +310,62 @@ input[type="radio"]:checked + label:before.dark-mode {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .quiz-container {
-    padding: 1.5rem;
+    padding: 2rem; /* Increased padding for better spacing */
     width: 90%;
+    max-width: 600px;  /* Adjust width for tablets */
+    margin: 0 auto; /* Ensure it stays centered */
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;  /* Slightly larger for readability */
+    padding-bottom: 1rem;  /* Space below the title */
   }
 
   ul li {
     font-size: 1.1rem;
+    margin: 0.8rem 0; /* Improved spacing between list items */
   }
 
   button {
-    padding: 1.2rem;
-    font-size: 1rem;
+    padding: 1.3rem; /* Increased padding for buttons */
+    font-size: 1.1rem; /* Slightly bigger text for easier tap */
+    margin-top: 1.5rem; /* Space between the button and list items */
+    border-radius: 10px; /* Rounded button corners */
   }
 
   #timer {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem; /* Space below the timer */
   }
 }
 
 @media (max-width: 480px) {
   .quiz-container {
-    padding: 1rem;
-    width: 95%;
+    width: 90%;
+    max-width: 350px; /* Set a more reasonable max-width for mobile devices */
+    margin: 0 auto; /* Ensures it stays centered */
+    padding: 1.5rem; /* Adequate padding on small screens */
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem; /* Adjust title size for mobile */
+    padding-bottom: 1rem;
   }
 
   ul li {
-    font-size: 1rem;
+    font-size: 1rem;  /* Reduce font size for better readability */
+    margin: 0.7rem 0; /* Spacing adjustment for small screens */
   }
 
   button {
-    padding: 1rem;
-    font-size: 0.9rem;
+    padding: 1.2rem; /* Adequate padding for smaller buttons */
+    font-size: 1rem; /* Text size that fits mobile screens */
+    margin-top: 1.2rem; /* Proper space from list items */
+    border-radius: 8px; /* Rounded button corners */
   }
 
   #timer {
-    font-size: 0.9rem;
-  }
-
-  .switch {
-    width: 50px;
-    height: 28px;
-  }
-
-  .slider:before {
-    height: 22px;
-    width: 22px;
+    font-size: 1rem;
+    margin-bottom: 1rem; /* Margin adjustment for mobile */
   }
 }
